@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
+import PCard from './PCard.jsx';
 
 class People extends Component {
+    constructor() {
+        super();
+        this.state = {
+            people: [],
+        }
+    }
     componentDidMount() {
-        console.log(this.props.match);
+        fetch('http://ghibliapi.herokuapp.com/people/')
+            .then(res => (res.json()))
+            .then(object => this.setState({ people: object }))
+            .catch(err => console.log(err));
     }
     render() {
         return (
-            <h1>people.</h1>
+            <>
+                <h1>characters of studio ghibli.</h1>
+                {this.state.people.map((person) => {
+                    return <PCard
+                        key={person.id}
+                        name={person.name}
+                        url={person.url}
+                        age={person.age}
+                        gender={person.gender}
+                    />
+                })}
+            </>
         )
     }
 }
