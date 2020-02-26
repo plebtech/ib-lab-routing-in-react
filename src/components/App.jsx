@@ -14,8 +14,8 @@ class App extends Component {
                 <>
                     <div id="controls">
                         <Link to="/">go home.</Link>
-                        <Link to="films">view films.</Link>
-                        <Link to="people">view people.</Link>
+                        <Link to="/films">view films.</Link>
+                        <Link to="/people">view people.</Link>
                     </div>
                     <div id="panel">
                         <Switch>
