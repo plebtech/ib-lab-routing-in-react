@@ -2,4 +2,12 @@
     margin: 1%;
     padding: 1%;
     font-family: monospace;
+    color: #ccc;
+}
+
+body {
+    max-width: 768px;
+    margin: 2% auto;
+    border: 2px solid #222;
+    background-color: #000;
 }
