@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import FCard from './FCard';
 
 class Flick extends Component {
     constructor() {
@@ -9,14 +8,22 @@ class Flick extends Component {
         }
     }
     componentDidMount() {
-        const ID = this.props.match.params;
-        fetch('http://studioghibli.herokuapp.com/films/' + ID)
+        const ID = this.props.match.params.id;
+        fetch('https://ghibliapi.herokuapp.com/films/' + ID)
             .then(res => res.json())
             .then(res => this.setState({ film: res }));
     }
     render() {
+        console.log(this.state.film);
         return (
-            <h1>this is the fourth page.</h1>
+            <div className="card">
+                <h2>{this.state.film.title}</h2>
+                <h4>
+                    <span>rt: {this.state.film.rt_score}</span>
+                    <span>release: {this.state.film.release_date}</span>
+                </h4>
+                <p>{this.state.film.description}</p>
+            </div>
         )
     }
 }

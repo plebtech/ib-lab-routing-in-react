@@ -13,17 +13,17 @@ class App extends Component {
             <Router>
                 <>
                     <div id="controls">
-                        <Link to="/">go home</Link>
-                        <Link to="films">view films</Link>
-                        <Link to="people">view people</Link>
+                        <Link to="/">go home.</Link>
+                        <Link to="films">view films.</Link>
+                        <Link to="people">view people.</Link>
                     </div>
                     <div id="panel">
                         <Switch>
                             <Route exact path="/" component={Home} />
-                            <Route path="/films" component={Films} />
-                            <Route path="/people" component={People} />
-                            <Route path="/films/:id" component={Flick} />
-                            <Route path="/people/:id" component={Person} />
+                            <Route exact path="/films" component={Films} />
+                            <Route exact path="/people" component={People} />
+                            <Route exact path="/films/:id" component={Flick} />
+                            <Route exact path="/people/:id" component={Person} />
                         </Switch>
                     </div>
                 </>

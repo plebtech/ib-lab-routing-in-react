@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 
 class Person extends Component {
+    constructor() {
+        super();
+        this.state = {
+            person: '',
+        }
+    }
     componentDidMount() {
-        console.log(this.props.match);
+        const ID = this.props.match.params.id;
+        fetch('https://ghibliapi.herokuapp.com/people/' + ID)
+            .then(res => res.json())
+            .then(res => this.setState({ person: res }));
     }
     render() {
+        console.log(this.state.person);
         return (
-            <h1>this is fifth page.</h1>
+            <div className="card">
+                <h2>{this.state.person.name}</h2>
+                <h4>
+                    <span>age: {this.state.person.age}</span>
+                    <span>gender: {this.state.person.gender}</span>
+                </h4>
+            </div>
         )
     }
 }

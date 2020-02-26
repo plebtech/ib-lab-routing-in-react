@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class FCard extends Component {
     render() {
@@ -10,6 +11,9 @@ class FCard extends Component {
                     <span>release: {this.props.release}</span>
                 </h4>
                 <p>{this.props.description}</p>
+                <h4><Link to={`/films/${this.props.id}`}>
+                    learn more.
+                </Link></h4>
             </div>
         )
     }

@@ -19,13 +19,16 @@ class Films extends Component {
             <>
                 <h1>films of studio ghibli.</h1>
                 {this.state.films.map(film => {
-                    return <FCard
-                        key={film.id}
-                        title={film.title}
-                        description={film.description}
-                        release={film.release_date}
-                        rt={film.rt_score}
-                    />
+                    return (
+                        <FCard
+                            key={film.id}
+                            id={film.id}
+                            title={film.title}
+                            description={film.description}
+                            release={film.release_date}
+                            rt={film.rt_score}
+                        />
+                    )
                 })}
             </>
         )

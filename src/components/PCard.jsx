@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class PCard extends Component {
     render() {
@@ -9,7 +10,9 @@ class PCard extends Component {
                     <span>age: {this.props.age}</span>
                     <span>gender: {this.props.gender}</span>
                 </h4>
-                <p><a href={this.props.url} target="_new">View {this.props.name}'s info</a></p>
+                <h4><Link to={`/people/${this.props.id}`}>
+                    learn more.
+                </Link></h4>
             </div>
         )
     }
