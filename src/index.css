@@ -2,12 +2,34 @@
     margin: 1%;
     padding: 1%;
     font-family: monospace;
-    color: #ccc;
+    color: #fdf6e3;
 }
 
 body {
-    max-width: 768px;
+    max-width: 960px;
     margin: 2% auto;
-    border: 2px solid #222;
-    background-color: #000;
+    border: 2px solid #073642;
+    background-color: #002b36;
+}
+
+#controls {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+#controls > a {
+    border: 2px solid #eee8d5;
+    font-size: 1.35em;
+    text-decoration: none;
+}
+
+#panel {
+    border: 4px solid #073642;
+    background-color: #eee8d5;
+}
+#panel > * {
+    color: #002b36;
+}
+#panel > p {
+    font-size: 1.2em;
 }

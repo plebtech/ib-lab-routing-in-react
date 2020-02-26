@@ -1,13 +1,35 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Home from './Home.jsx';
+import Films from './Films.jsx';
+import People from './People.jsx';
+import Page4 from './Page4.jsx';
+import Page5 from './Page5.jsx';
 
 class App extends Component {
     render() {
         return (
-            <div id="app-container">
-                <h1>returned.</h1>
-            </div>
+            <Router>
+                <>
+                    <div id="controls">
+                        <Link to="/">go home</Link>
+                        <Link to="page2">view films</Link>
+                        <Link to="page3">view people</Link>
+                        <Link to="page4">go to page 4</Link>
+                        <Link to="page5">go to page 5</Link>
+                    </div>
+                    <div id="panel">
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/page2" component={Films} />
+                            <Route path="/page3" component={People} />
+                            <Route path="/page4" component={Page4} />
+                            <Route path="/page5" component={Page5} />
+                        </Switch>
+                    </div>
+                </>
+            </Router>
         );
     }
 }
