@@ -33,3 +33,17 @@ body {
 #panel > p {
     font-size: 1.2em;
 }
+
+.card {
+    background-color: #002b36;
+}
+.card > h2 {
+    background-color: #073642;
+}
+.card > h4 > span {
+    background-color: #073642;
+    font-size: 1.25em;
+}
+.card > p {
+    font-size: 1.2em;
+}
