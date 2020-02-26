@@ -14,16 +14,16 @@ class App extends Component {
                 <>
                     <div id="controls">
                         <Link to="/">go home</Link>
-                        <Link to="page2">view films</Link>
-                        <Link to="page3">view people</Link>
+                        <Link to="films">view films</Link>
+                        <Link to="people">view people</Link>
                         <Link to="page4">go to page 4</Link>
                         <Link to="page5">go to page 5</Link>
                     </div>
                     <div id="panel">
                         <Switch>
                             <Route exact path="/" component={Home} />
-                            <Route path="/page2" component={Films} />
-                            <Route path="/page3" component={People} />
+                            <Route path="/films" component={Films} />
+                            <Route path="/people" component={People} />
                             <Route path="/page4" component={Page4} />
                             <Route path="/page5" component={Page5} />
                         </Switch>
