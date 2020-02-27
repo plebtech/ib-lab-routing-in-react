@@ -9,7 +9,7 @@ class People extends Component {
         }
     }
     componentDidMount() {
-        fetch('http://ghibliapi.herokuapp.com/people/')
+        fetch('https://ghibliapi.herokuapp.com/people/')
             .then(res => (res.json()))
             .then(object => this.setState({ people: object }))
             .catch(err => console.log(err));
@@ -22,11 +22,7 @@ class People extends Component {
                     return (
                         <PCard
                             key={person.id}
-                            id={person.id}
-                            name={person.name}
-                            url={person.url}
-                            age={person.age}
-                            gender={person.gender}
+                            person={person}
                         />
                     )
                 })}

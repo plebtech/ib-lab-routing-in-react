@@ -9,7 +9,7 @@ class Films extends Component {
         }
     }
     componentDidMount() {
-        fetch('http://ghibliapi.herokuapp.com/films/')
+        fetch('https://ghibliapi.herokuapp.com/films/')
             .then(res => (res.json()))
             .then(object => this.setState({ films: object }))
             .catch(err => console.log(err));
@@ -22,11 +22,7 @@ class Films extends Component {
                     return (
                         <FCard
                             key={film.id}
-                            id={film.id}
-                            title={film.title}
-                            description={film.description}
-                            release={film.release_date}
-                            rt={film.rt_score}
+                            film={film}
                         />
                     )
                 })}

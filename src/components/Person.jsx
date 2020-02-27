@@ -14,9 +14,8 @@ class Person extends Component {
             .then(res => this.setState({ person: res }));
     }
     render() {
-        console.log(this.state.person);
         return (
-            <div className="card">
+            <div key={this.state.person.id} className="card">
                 <h2>{this.state.person.name}</h2>
                 <h4>
                     <span>age: {this.state.person.age}</span>

@@ -14,9 +14,8 @@ class Flick extends Component {
             .then(res => this.setState({ film: res }));
     }
     render() {
-        console.log(this.state.film);
         return (
-            <div className="card">
+            <div key={this.state.film.id} className="card">
                 <h2>{this.state.film.title}</h2>
                 <h4>
                     <span>rt: {this.state.film.rt_score}</span>

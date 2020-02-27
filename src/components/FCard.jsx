@@ -5,13 +5,13 @@ class FCard extends Component {
     render() {
         return (
             <div className="card">
-                <h2>{this.props.title}</h2>
+                <h2>{this.props.film.title}</h2>
                 <h4>
-                    <span>rt: {this.props.rt}</span>
-                    <span>release: {this.props.release}</span>
+                    <span>rt: {this.props.film.rt_score}</span>
+                    <span>release: {this.props.film.release_date}</span>
                 </h4>
-                <p>{this.props.description}</p>
-                <h4><Link to={`/films/${this.props.id}`}>
+                <p>{this.props.film.description}</p>
+                <h4><Link to={`/films/${this.props.film.id}`}>
                     learn more.
                 </Link></h4>
             </div>
