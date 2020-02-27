@@ -11,11 +11,11 @@ class Person extends Component {
         const ID = this.props.match.params.id;
         fetch('https://ghibliapi.herokuapp.com/people/' + ID)
             .then(res => res.json())
-            .then(res => this.setState({ person: res }));
+            .then(person => this.setState({ person }));
     }
     render() {
         return (
-            <div key={this.state.person.id} className="card">
+            <div className="card">
                 <h2>{this.state.person.name}</h2>
                 <h4>
                     <span>age: {this.state.person.age}</span>

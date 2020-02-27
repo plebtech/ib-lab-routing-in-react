@@ -11,11 +11,11 @@ class Flick extends Component {
         const ID = this.props.match.params.id;
         fetch('https://ghibliapi.herokuapp.com/films/' + ID)
             .then(res => res.json())
-            .then(res => this.setState({ film: res }));
+            .then(film => this.setState({ film }));
     }
     render() {
         return (
-            <div key={this.state.film.id} className="card">
+            <div className="card">
                 <h2>{this.state.film.title}</h2>
                 <h4>
                     <span>rt: {this.state.film.rt_score}</span>

@@ -11,7 +11,7 @@ class People extends Component {
     componentDidMount() {
         fetch('https://ghibliapi.herokuapp.com/people/')
             .then(res => (res.json()))
-            .then(object => this.setState({ people: object }))
+            .then(people => this.setState({ people }))
             .catch(err => console.log(err));
     }
     render() {

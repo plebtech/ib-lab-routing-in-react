@@ -11,7 +11,7 @@ class Films extends Component {
     componentDidMount() {
         fetch('https://ghibliapi.herokuapp.com/films/')
             .then(res => (res.json()))
-            .then(object => this.setState({ films: object }))
+            .then(films => this.setState({ films }))
             .catch(err => console.log(err));
     }
     render() {
